@@ -39,6 +39,7 @@ body {
 }
 
 #display {
+    height: 100dvh; 
     -webkit-overflow-scrolling: touch;
     overflow-y: scroll;
 }

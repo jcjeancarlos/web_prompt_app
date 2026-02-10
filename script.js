@@ -2,25 +2,27 @@ let scrollInterval = null;
 let hideTimeout = null;
 
 function show() {
-    const t = document.getElementById("text").value;
-    document.getElementById("display").innerText = t;
+    const elem = document.body;
 
-    document.getElementById("display").style.display = "block";
-    document.getElementById("controls").style.display = "block";
-    document.getElementById("text").style.display = "none";
-
-    // FULLSCREEN iPhone, Android, PC
-    const elem = document.documentElement;
+    // FULLSCREEN primeiro (iPhone exige isso)
     if (elem.requestFullscreen) elem.requestFullscreen();
-    if (elem.webkitRequestFullscreen) elem.webkitRequestFullscreen();
+    else if (elem.webkitRequestFullscreen) elem.webkitRequestFullscreen();
 
-    startHideTimer();
+    setTimeout(() => {
+        const t = document.getElementById("text").value;
+        document.getElementById("display").innerText = t;
+
+        document.getElementById("display").style.display = "block";
+        document.getElementById("controls").style.display = "block";
+        document.getElementById("text").style.display = "none";
+
+        startHideTimer();
+    }, 100); // necessery in iPhone
 }
 
 function exitFull() {
     stopScroll();
 
-    // Close do fullscreen
     if (document.exitFullscreen) document.exitFullscreen();
     if (document.webkitExitFullscreen) document.webkitExitFullscreen();
 
@@ -55,14 +57,13 @@ function stopScroll() {
 
 function setFont(size) {
     const display = document.getElementById("display");
-    const currentScroll = display.scrollTop; // mantém posição ao trocar fonte
+    const currentScroll = display.scrollTop;
 
     if (size === "small") display.style.fontSize = "40px";
     if (size === "medium") display.style.fontSize = "60px";
     if (size === "large") display.style.fontSize = "75px";
 
-    display.scrollTop = currentScroll; // evita voltar para o topo
-
+    display.scrollTop = currentScroll;
     startHideTimer();
 }
 
