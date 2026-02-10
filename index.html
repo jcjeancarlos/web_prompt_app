@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="style.css">
+
+</head>
+<body>
+
+<textarea id="text" placeholder="Digite seu texto aqui..."></textarea>
+<button id="fullscreen_btn" onclick="show()">Tela cheia espelhada</button>
+
+<div id="display"></div>
+
+<div id="controls">
+    <!-- btn controles -->
+    <button onclick="stopScroll()">Parar</button>
+    <button onclick="setSpeed(1)">Lento</button>
+    <button onclick="setSpeed(2)">Médio</button>
+    <button onclick="setSpeed(3)">Rápido</button>
+    <button onclick="setSpeed(4)">Muito rápido</button>
+
+    <!-- btn fonte -->
+    <button onclick="setFont('small')">A</button>
+    <button onclick="setFont('medium')">A+</button>
+    <button onclick="setFont('large')">A++ </button>
+
+    <button onclick="exitFull()">Fechar espelhamento</button>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
