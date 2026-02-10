@@ -34,9 +34,9 @@ function setSpeed(level) {
 
     const speeds = {
         1: 1,
-        2: 1,
+        2: 1.5,
         3: 2,
-        4: 4
+        4: 2.5
     };
 
     const speed = speeds[level];

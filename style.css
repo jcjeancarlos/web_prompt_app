@@ -18,6 +18,7 @@ body {
     padding-right: 5px;
     width: 100vw;
     height: 100vh;
+    height: 100dvh;
     overflow-y: auto;
     overflow-x: hidden;      
     word-wrap: break-word;   
