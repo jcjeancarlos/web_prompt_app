@@ -37,6 +37,12 @@ body {
     scrollbar-width: none;     /* Firefox */
 }
 
+#display {
+    -webkit-overflow-scrolling: touch;
+    overflow-y: scroll;
+}
+
+
 button {
     font-size: 20px;
     padding: 10px 20px;
